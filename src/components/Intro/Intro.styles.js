@@ -9,6 +9,7 @@ export const Title = styled.h1`
   color: ${colors.white};
   margin-top: 0;
   font-family: 'Merriweather', serif;
+  font-style: italic;
 `;
 
 export const Description = styled.p`
