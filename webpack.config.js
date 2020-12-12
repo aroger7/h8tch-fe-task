@@ -25,5 +25,6 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
       filename: 'index.html'
     })
-  ]
+  ],
+  resolve: { modules: [path.resolve(__dirname, 'src'), 'node_modules'] }
 };
