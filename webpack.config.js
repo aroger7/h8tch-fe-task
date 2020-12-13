@@ -8,6 +8,21 @@ const rules = [
     use: {
       loader: 'babel-loader'
     }
+  },
+  {
+    test: /\.svg$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: 'babel-loader'
+      },
+      {
+        loader: 'react-svg-loader',
+        options: {
+          jsx: true
+        }
+      }
+    ]
   }
 ];
 
@@ -23,7 +38,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
-      filename: 'index.html'
+      filename: 'index.html',
+      inject: true
     })
   ],
   resolve: { modules: [path.resolve(__dirname, 'src'), 'node_modules'] }
