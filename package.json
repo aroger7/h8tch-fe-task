@@ -6,7 +6,7 @@
   "scripts": {
     "build:dev": "webpack --mode='development'",
     "build:prod": "webpack --mode='production'",
-    "start": "webpack serve --mode development",
+    "start": "webpack serve --mode development --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.0",
+    "react-svg-loader": "^3.0.3",
     "style-loader": "^2.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0",
