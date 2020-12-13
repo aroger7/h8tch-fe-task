@@ -10,6 +10,7 @@ export const Title = styled.h1`
   margin-top: 0;
   font-family: 'Merriweather', serif;
   font-style: italic;
+  margin-bottom: 2rem;
 `;
 
 export const Description = styled.p`
