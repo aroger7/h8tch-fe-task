@@ -8,6 +8,7 @@ const TextBox = styled.input`
   box-sizing: border-box;
   padding: 1.5rem 1rem;
   color: ${colors.white};
+  text-transform: uppercase;
 
   &::placeholder {
     color: #D1D3D8;
