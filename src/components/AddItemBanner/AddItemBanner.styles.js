@@ -12,4 +12,9 @@ export const BannerText = styled.h2`
   margin: 0;
   color: ${colors.white};
   text-transform: uppercase;
+  font-size: 1.5rem;
+
+  @media screen and (max-width: 48em) {
+    font-size: 1.125rem;
+  }
 `;
