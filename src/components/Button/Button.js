@@ -14,6 +14,10 @@ const Button = styled.button`
   &:hover {
     background: linear-gradient(0deg, #556175 0%, #b5c5d7 100%);
   }
+
+  @media screen and (max-width: 48em) {
+    font-size: 1rem;
+  }
 `;
 
 export default Button;
