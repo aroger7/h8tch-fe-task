@@ -1,10 +1,12 @@
 import React, { createContext, useState } from 'react';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 const itemsContext = createContext();
 const { Provider } = itemsContext;
 
 const ItemsProvider = ({ children }) => {
-  const [columns, setColumns] = useState([[], []]);
+  const [columns, setColumns] = useLocalStorage('h8tch-columns', [[], []]);
+  const [search, setSearch] = useState('');
 
   const addItem = (column, item) => {
     if (columns[column]) {
@@ -14,7 +16,7 @@ const ItemsProvider = ({ children }) => {
         ...columns.slice(column + 1)
       ]);
     }
-  }
+  };
 
   const removeItem = (column, item) => {
     if (columns[column]) {
@@ -25,9 +27,9 @@ const ItemsProvider = ({ children }) => {
         ...columns.slice(column + 1)
       ]);
     }
-  }
+  };
 
-  return <Provider value={{ columns, addItem, removeItem }}>{children}</Provider>;
+  return <Provider value={{ columns, addItem, removeItem, search, setSearch }}>{children}</Provider>;
 }
 
 export { itemsContext, ItemsProvider };
