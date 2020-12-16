@@ -7,3 +7,4 @@ Optional features include:
 - State management using React Context
 - Styling using Emotion
 - Custom dropdown component for better cross-browser styling
+- Basic linting
