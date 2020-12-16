@@ -8,3 +8,21 @@ Optional features include:
 - Styling using Emotion
 - Custom dropdown component for better cross-browser styling
 - Basic linting
+
+## Usage
+
+To install dependencies, use:
+
+`npm install`
+
+To start up the development server at port 3000 use:
+
+`npm start`
+
+To build a deployment package for production use, run:
+
+`npm run build:prod`
+
+For linting, use:
+
+`npm run lint`
