@@ -33,6 +33,7 @@ export const OptionItem = styled.button`
   padding: 0 1rem;
   font-weight: 500;
   color: ${colors.raven};
+  border-bottom: 2px solid ${colors.raven};
 
   &:hover {
     color: ${colors.mako};
