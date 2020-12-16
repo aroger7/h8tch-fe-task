@@ -10,7 +10,7 @@ export const ColumnHeader = styled.div`
   font-weight: 500;
   padding: 1.5rem 0;
   text-align: center;
-  background: linear-gradient(0deg, #495468 0%, #b8c8db 100%);
+  background: linear-gradient(0deg, ${colors.riverBed} 0%, ${colors.pigeonPost} 100%);
   color: ${colors.white};
   text-transform: uppercase;
 `;

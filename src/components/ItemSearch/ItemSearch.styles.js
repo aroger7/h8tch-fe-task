@@ -16,7 +16,7 @@ export const ItemSearchLabel = styled.label`
 export const ItemSearchInputContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: #9AA0AB;
+  background-color: ${colors.grayChateau};
   border: 4px solid ${colors.white};
   padding: 1rem;
 `;
@@ -35,7 +35,7 @@ export const ItemSearchInput = styled.input`
   }
 
   &::placeholder {
-    color: #D1D3D8;
+    color: ${colors.iron};
     text-transform: uppercase;
   }
 `;

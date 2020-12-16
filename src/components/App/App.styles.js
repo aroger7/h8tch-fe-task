@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from 'styles';
 
 export const App = styled.div`
-  background-color: ${colors.primary};
+  background-color: ${colors.raven};
   width: 100%;
   min-height: 100%;
 `;

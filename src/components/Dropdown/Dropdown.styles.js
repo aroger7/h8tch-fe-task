@@ -5,7 +5,7 @@ export const Dropdown = styled.div`
   position: relative;
   width: 100%;
   height: 4.5rem;
-  background: #9AA0AB;
+  background: ${colors.grayChateau};
   border: 4px solid ${colors.white};
   width: 100%;
   box-sizing: border-box;
@@ -32,10 +32,10 @@ export const OptionItem = styled.button`
   text-transform: uppercase;
   padding: 0 1rem;
   font-weight: 500;
-  color: #79818f;
+  color: ${colors.raven};
 
   &:hover {
-    color: #474D58;
+    color: ${colors.mako};
   }
 `;
 
@@ -53,5 +53,5 @@ export const TriggerButton = styled.button`
 `;
 
 export const SelectedOptionText = styled.p`
-  color: ${({ isPlaceholder }) => isPlaceholder ? colors.white : '#D1D3D8'};
+  color: ${({ isPlaceholder }) => isPlaceholder ? colors.white : colors.iron};
 `;

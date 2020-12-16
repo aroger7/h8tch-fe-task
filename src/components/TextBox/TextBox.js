@@ -3,7 +3,7 @@ import { colors } from 'styles';
 
 const TextBox = styled.input`
   border: 4px solid ${colors.white};
-  background: #9AA0AB;
+  background: ${colors.grayChateau};
   width: 100%;
   box-sizing: border-box;
   padding: 1.5rem 1rem;
@@ -11,7 +11,7 @@ const TextBox = styled.input`
   text-transform: uppercase;
 
   &::placeholder {
-    color: #D1D3D8;
+    color: ${colors.iron};
     text-transform: uppercase;
   }
 `;
