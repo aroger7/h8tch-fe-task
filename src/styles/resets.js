@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { colors } from 'styles';
 
 export const resets = css`
   html, body, #root {
@@ -12,7 +13,23 @@ export const resets = css`
     font-size: 4.5rem;
   }
 
+  input {
+    background: ${colors.grayChateau};
+    border: 4px solid ${colors.white};
+
+    &:focus {
+      outline: none;
+      border-color: ${colors.casper};
+    }
+  }
+
   button {
+    border: 4px solid ${colors.white};
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: ${colors.casper};
+    }
   }
 `;

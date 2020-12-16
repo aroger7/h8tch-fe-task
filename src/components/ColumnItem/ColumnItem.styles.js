@@ -37,4 +37,10 @@ export const RemoveButton = styled.button`
   width: 2rem;
   height: 2rem;
   padding: 0;
+  transition: transform 0.1s ease-in-out;
+
+  &:focus {
+    border-color: ${({ isOdd }) => isOdd ? colors.raven : colors.white };
+    transform: scale(1.2, 1.2);
+  }
 `;

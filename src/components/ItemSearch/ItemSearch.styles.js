@@ -19,6 +19,10 @@ export const ItemSearchInputContainer = styled.div`
   background-color: ${colors.grayChateau};
   border: 4px solid ${colors.white};
   padding: 1rem;
+
+  &:focus-within {
+    border-color: ${colors.casper};
+  }
 `;
 
 export const ItemSearchInput = styled.input`

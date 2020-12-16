@@ -13,6 +13,10 @@ export const Dropdown = styled.div`
   color: ${colors.white};
   text-transform: uppercase;
   padding: 0;
+
+  :focus-within {
+    border-color: ${colors.casper};
+  }
 `;
 
 export const OptionsList = styled.div`
@@ -35,6 +39,12 @@ export const OptionItem = styled.button`
   color: ${colors.raven};
   border-bottom: 2px solid ${colors.raven};
 
+  &:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
   &:hover {
     color: ${colors.mako};
   }
@@ -51,6 +61,10 @@ export const TriggerButton = styled.button`
   color: ${colors.white};
   text-transform: uppercase;
   padding: 2rem 1rem;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const SelectedOptionText = styled.p`
