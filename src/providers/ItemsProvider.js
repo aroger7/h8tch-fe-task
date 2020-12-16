@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import useLocalStorage from 'hooks/useLocalStorage';
 
 const itemsContext = createContext();
@@ -31,5 +32,12 @@ const ItemsProvider = ({ children }) => {
 
   return <Provider value={{ columns, addItem, removeItem, search, setSearch }}>{children}</Provider>;
 }
+
+ItemsProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+};
 
 export { itemsContext, ItemsProvider };
