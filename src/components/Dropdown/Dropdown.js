@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import DownArrowIcon from 'assets/arrow-down.svg';
+import UpArrowIcon from 'assets/arrow-up.svg';
 import useOnClickOutside from 'hooks/useOnClickOutside';
 import * as Styled from './Dropdown.styles';
 
@@ -22,7 +24,7 @@ const Dropdown = ({ options, value, onChange, placeholder }) => {
         <Styled.SelectedOptionText isPlaceholder={Boolean(selectedOption)}>
           {selectedOptionLabel || placeholder}
         </Styled.SelectedOptionText>
-        <p>{isOpen ? '▲' : '▼'}</p>
+        {!isOpen ? <DownArrowIcon /> : <UpArrowIcon />}
       </Styled.TriggerButton>
       {isOpen && (
         <Styled.OptionsList>
