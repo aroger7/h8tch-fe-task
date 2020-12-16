@@ -32,10 +32,10 @@ export const OptionItem = styled.button`
   text-transform: uppercase;
   padding: 0 1rem;
   font-weight: 500;
-  color: ${({ isSelected }) => isSelected ? '#474D58' : '#79818f'};
+  color: #79818f;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    color: #474D58;
   }
 `;
 
