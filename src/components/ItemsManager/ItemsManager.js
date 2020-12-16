@@ -4,27 +4,31 @@ import Button from 'components/Button';
 import ColumnsList from 'components/ColumnsList';
 import TextBox from 'components/TextBox';
 import Dropdown from 'components/Dropdown';
-import DropdownOption from 'components/DropdownOption';
+import ItemSearch from 'components/ItemSearch';
 import { itemsContext } from 'providers/ItemsProvider';
 import * as Styled from './ItemsManager.styles';
 
 const ItemsManager = () => {
   const [itemText, setItemText] = useState('');
-  const [selectedColumn, setSelectedColumn] = useState('');
-  const { columns, addItem } = useContext(itemsContext);
+  const [selectedColumn, setSelectedColumn] = useState(null);
+  const { columns, search, addItem, setSearch } = useContext(itemsContext);
 
-  const handleColumnSelect = (evt) => {
-    setSelectedColumn(evt.target.value);
+  const handleColumnSelect = (value) => {
+    setSelectedColumn(value);
   };
 
   const handleItemTextChange = (evt) => {
     setItemText(evt.target.value);
   }
 
-  const addItemClick = () => {
+  const handleSearchTextChange = (evt) => {
+    setSearch(evt.target.value);
+  }
+
+  const handleAddItemClick = () => {
     addItem(selectedColumn, itemText);
     setItemText('');
-    setSelectedColumn('');
+    setSelectedColumn(null);
   }
 
   return (
@@ -32,33 +36,40 @@ const ItemsManager = () => {
       <AddItemBanner />
       <Styled.BodyContainer>
         <Styled.ControlsContainer>
-          <Styled.ItemInputContainer>
-            <TextBox
-              value={itemText}
-              placeholder="Enter Item"
-              onChange={handleItemTextChange}
-            />
-          </Styled.ItemInputContainer>
-          <Styled.ColumnDropdownContainer>
-            <Dropdown placeholder="Choose Column" onChange={handleColumnSelect} value={selectedColumn}>
-              <DropdownOption value="" disabled hidden>Choose Column</DropdownOption>
-              {columns.map((_, index) => (
-                <DropdownOption 
-                  value={index} 
-                  key={`column-option-${index}`}
-                >
-                  {`Column ${index + 1}`}
-                </DropdownOption>
-              ))}
-            </Dropdown>
-          </Styled.ColumnDropdownContainer>
-          <Button
-            disabled={!Boolean(itemText && selectedColumn)}
-            onClick={addItemClick}
-            fullWidth
-          >
-            Add Item
-          </Button>
+          <Styled.ControlsContainerSection>
+            <Styled.ItemInputContainer>
+              <TextBox
+                value={itemText}
+                placeholder="Enter Item"
+                onChange={handleItemTextChange}
+              />
+            </Styled.ItemInputContainer>
+            <Styled.ColumnDropdownContainer>
+              <Dropdown
+                placeholder="Choose Column"
+                onChange={handleColumnSelect}
+                value={selectedColumn}
+                options={columns.map((_, index) => ({
+                  label: `Column ${index + 1}`,
+                  value: index
+                }))}
+              />
+            </Styled.ColumnDropdownContainer>
+          </Styled.ControlsContainerSection>
+          <Styled.ControlsContainerSection>
+            <Styled.AddItemButtonContainer>
+              <Button
+                disabled={!itemText || (!selectedColumn && selectedColumn !== 0)}
+                onClick={handleAddItemClick}
+                fullWidth
+              >
+                Add Item
+              </Button>
+            </Styled.AddItemButtonContainer>
+            <Styled.ItemSearchContainer>
+              <ItemSearch searchText={search} onChange={handleSearchTextChange} />
+            </Styled.ItemSearchContainer>
+          </Styled.ControlsContainerSection>
         </Styled.ControlsContainer>
         <Styled.ColumnsContainer>
           <ColumnsList />
