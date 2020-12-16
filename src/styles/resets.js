@@ -11,4 +11,8 @@ export const resets = css`
   h1 {
     font-size: 4.5rem;
   }
+
+  button {
+    cursor: pointer;
+  }
 `;

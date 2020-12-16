@@ -6,7 +6,6 @@ const Button = styled.button`
   color: ${colors.white};
   width: ${({ fullWidth }) => fullWidth ? '100%' : 'auto'};
   background: none;
-  cursor: pointer;
   text-transform: uppercase;
   padding: 1.5rem 0;
   font-size: 1.125rem;
