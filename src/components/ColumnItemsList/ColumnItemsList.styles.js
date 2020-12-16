@@ -19,11 +19,16 @@ export const ColumnHeaderText = styled.p`
   color: ${colors.white};
   font-size: 1.125rem;
   font-weight: 500;
+  margin: 0;
 `;
 
 export const ItemsList = styled.ul`
   flex: 1;
   list-style: none;
+  min-width: 0;
   padding: 0;
   margin: 0;
+  height: 28rem;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;

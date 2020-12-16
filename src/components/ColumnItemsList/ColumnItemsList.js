@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ColumnItem from 'components/ColumnItem';
+import { itemsContext } from 'providers/ItemsProvider';
 import * as Styled from './ColumnItemsList.styles';
 
 const ColumnItemsList = ({ title, items, columnIndex }) => {
+  const { search } = useContext(itemsContext);
+  const regex = new RegExp(search, 'gi');
   return (
     <Styled.ColumnItemsList>
-      <Styled.ColumnHeader>{title}</Styled.ColumnHeader>
+      <Styled.ColumnHeader>
+        <Styled.ColumnHeaderText>
+          {title}
+        </Styled.ColumnHeaderText>
+      </Styled.ColumnHeader>
       <Styled.ItemsList>
-        {items.map((item, index) => (
+        {items.filter(item => item.match(regex)).map((item, index) => (
           <ColumnItem
             key={`column-${columnIndex}-${index}`}
             isOdd={Boolean((index + 1) % 2 === 0)}
